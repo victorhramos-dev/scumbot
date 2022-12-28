@@ -171,6 +171,12 @@ class ParseLogs extends Controller
             if (!Str::contains($line, "Custom Zones")) {
                 $player = self::checkPlayer($line);
 
+                // if a palyer is matched here he is an admin
+                if(!$player->is_admin){
+                    $player->is_admin = 1;
+                    $player->save();
+                }
+
                 $player->addAdminCommand(self::getCommand($line), self::getTime($line));
             }
         }
