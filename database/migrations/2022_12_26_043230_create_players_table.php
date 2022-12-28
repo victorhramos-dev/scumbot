@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->string('last_ip')->nullable();
             $table->tinyInteger('is_admin')->default(0);
             $table->float('balance')->default(0);
+            $table->integer('fame')->default(0);
             $table->string('steam_name')->nullable();
             $table->string('steam_avatar')->nullable();
             $table->integer('steam_since')->nullable();

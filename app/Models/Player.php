@@ -38,6 +38,11 @@ class Player extends Model
         return $this->hasMany(PlayerChat::class, 'steam_id', 'steam_id');
     }
 
+    public function violations()
+    {
+        return $this->hasMany(PlayerViolation::class, 'steam_id', 'steam_id');
+    }
+
     public function addLogin($type = 'in', $ip, $date, $x = 0, $y = 0, $z = 0)
     {
         if ($ip != "0.0.0.0") {
@@ -94,6 +99,15 @@ class Player extends Model
         $action->steam_id = $this->steam_id;
         $action->action = $line;
         $action->date = $date;
+        $action->save();
+    }
+
+    public function addViolation($date, $line)
+    {
+        $action = new PlayerViolation();
+        $action->steam_id = $this->steam_id;
+        $action->date = $date;
+        $action->violation = $line;
         $action->save();
     }
 }

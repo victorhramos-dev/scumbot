@@ -172,7 +172,7 @@ class ParseLogs extends Controller
                 $player = self::checkPlayer($line);
 
                 // if a palyer is matched here he is an admin
-                if(!$player->is_admin){
+                if (!$player->is_admin) {
                     $player->is_admin = 1;
                     $player->save();
                 }
@@ -196,7 +196,7 @@ class ParseLogs extends Controller
             $player->addChat(self::getName($line), self::getChatArea($line), self::getChatMessage($line), self::getTime($line));
 
             // exemplo de comando
-            if (strpos(self::getChatMessage($line), '/online') === 0){
+            if (strpos(self::getChatMessage($line), '/online') === 0) {
                 //manda o bot enviar no chat quantos players online
             }
         }
@@ -288,6 +288,20 @@ class ParseLogs extends Controller
 
     public static function famepoints()
     {
+        foreach (self::$lines as $line) {
+            $line = trim($line);
+
+            if (Str::contains($line, '10 minutes for a total of')) {
+                $fame = Str::after($line, '10 minutes for a total of ');
+                $fame = intval($fame);
+
+                $player = Player::where('steam_id', self::getSteam($line))->first();
+                if ($player) {
+                    $player->fame = $fame;
+                    $player->save();
+                }
+            }
+        }
     }
 
     public static function gameplay()
@@ -306,7 +320,7 @@ class ParseLogs extends Controller
                 $trap->save();
             }
 
-            if(Str::contains($line, '[LogTrap] Triggered')) {
+            if (Str::contains($line, '[LogTrap] Triggered')) {
                 $trap = Trap::where([
                     ['armed_x', '=', Str::between($line, 'X=', ' Y')],
                     ['armed_y', '=', Str::between($line, 'Y=', ' Z')],
@@ -402,5 +416,14 @@ class ParseLogs extends Controller
 
     public static function violations()
     {
+        foreach (self::$lines as $line) {
+            $line = trim($line);
+
+            if (Str::contains($line, 'violation detected for user')) {
+                $player = Player::where('steam_id', self::getSteam($line))->first();
+
+                $player->addViolation(self::getTime($line), Str::after($line, ': '));
+            }
+        }
     }
 }
