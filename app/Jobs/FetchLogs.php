@@ -26,6 +26,10 @@ class FetchLogs extends Controller
 
             $client = new FtpClient($connection);
 
+            if(!is_dir(Storage::disk('local')->path('gamelogs'))){
+                mkdir(Storage::disk('local')->path('gamelogs'));
+            }
+
             while (True) {
                 $files = $client->listDirDetails('/SCUM/Saved/SaveFiles/Logs');
 
@@ -72,6 +76,10 @@ class FetchLogs extends Controller
 
             $lastFile = end($files);
             $lastTimestamp = str_replace('.log', '', explode('_', $lastFile['name'])[1]);
+
+            if(!is_dir(Storage::disk('local')->path('gamelogs'))){
+                mkdir(Storage::disk('local')->path('gamelogs'));
+            }
 
             foreach ($files as $file) {
                 $localFile = Storage::disk('local')->path('gamelogs') . '/' . $file['name'];
