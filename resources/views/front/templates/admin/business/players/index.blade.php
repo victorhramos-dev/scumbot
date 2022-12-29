@@ -43,8 +43,6 @@
                         <th>@lang('dictionary.id')</th>
                         <th>@lang('dictionary.created-at')</th>
                         <th>@lang('dictionary.name')</th>
-                        <th>@lang('dictionary.email')</th>
-                        <th>@lang('dictionary.mobile')</th>
                         <th class="text-center">@lang('dictionary.actions')</th>
                     </tr>
                 </thead>
@@ -54,8 +52,6 @@
                             <td>{{ $player->id }}</td>
                             <td>{{ $player->present()->createdAt }}</td>
                             <td>{{ $player->name }}</td>
-                            <td>{{ $player->email }}</td>
-                            <td>{{ $player->present()->mobile }}</td>
                             <td class="text-center">
                                 @shield('player.edit')
                                     <a class="btn btn-icon btn-flat-primary" href="{{ route('admin.players.edit', $player->id) }}">
@@ -72,7 +68,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="6" class="text-center">@lang('messages.no-records')</td>
+                            <td colspan="4" class="text-center">@lang('messages.no-records')</td>
                         </tr>
                     @endforelse
                 </tbody>
@@ -105,31 +101,12 @@
                                 <input type="text" name="search_name" class="form-control" value="{{ request()->get('search_name') }}">
                             </div>
 
-                            <div class="form-group col-lg-6">
-                                <label>@lang('dictionary.email')</label>
-                                <input type="text" name="search_email" class="form-control" value="{{ request()->get('search_email') }}">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col-lg-6">
-                                <label>@lang('dictionary.mobile')</label>
-                                <input type="text" name="search_mobile" class="form-control phone" value="{{ request()->get('search_mobile') }}">
-                            </div>
-
-                            <div class="form-group col-lg-6">
-                                <label>@lang('dictionary.phone')</label>
-                                <input type="text" name="search_phone" class="form-control phone" value="{{ request()->get('search_phone') }}">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-lg-3">
                                 <label>@lang('dictionary.created-at')</label>
                                 <input type="text" name="search_created_at_min" class="form-control date_br" placeholder="@lang('dictionary.min')" value="{{ request()->get('search_created_at_min') }}">
                             </div>
 
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-lg-3">
                                 <label>&nbsp;</label>
                                 <input type="text" name="search_created_at_max" class="form-control date_br" placeholder="@lang('dictionary.max')" value="{{ request()->get('search_created_at_max') }}">
                             </div>

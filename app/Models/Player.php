@@ -5,10 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Concerns\HasEvents;
 use Illuminate\Database\Eloquent\Model;
 
+use Laracasts\Presenter\PresentableTrait;
+
 class Player extends Model
 {
+    use PresentableTrait;
     use HasEvents;
 
+    /**
+     * Presenter class
+     *
+     * @var  string
+     */
+    protected $presenter = 'App\\Presenters\\PlayerPresenter';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
         "balance"
     ];
