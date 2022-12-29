@@ -1,0 +1,21 @@
+// Wizard
+.step-app {
+    .step-steps {
+        display: none;
+    }
+
+    .step-content {
+        padding: 0px;
+        border: none;
+    }
+
+    .validation-message {
+        float: left;
+        font-size: 12px;
+        margin-top: 5px;
+        margin-bottom: 12px;
+        display: block;
+        width: 100%;
+        color: #ea5455;
+    }
+}

@@ -53,15 +53,28 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $routeMiddleware = [
-        'auth' => \App\Http\Middleware\Authenticate::class,
-        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
-        'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
-        'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
+        'admin'        => \App\Http\Middleware\Admin\RedirectWhenIsGuest::class,
+        'admin.logged' => \App\Http\Middleware\Admin\RedirectWhenIsLogged::class,
+        
+        'player'         => \App\Http\Middleware\Player\RedirectWhenIsGuest::class,
+        'player.logged'  => \App\Http\Middleware\Player\RedirectWhenIsLogged::class,
+        
         'signed' => \App\Http\Middleware\ValidateSignature::class,
-        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'guest'  => \App\Http\Middleware\RedirectIfAuthenticated::class,
+
+        'auth'         => \App\Http\Middleware\Authenticate::class,
+        'auth.basic'   => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
+        
+        'can'              => \Illuminate\Auth\Middleware\Authorize::class,
+        'throttle'         => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'verified'         => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,        
+        'cache.headers'    => \Illuminate\Http\Middleware\SetCacheHeaders::class,
+        'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
+
+        'needsRole'       => \Artesaos\Defender\Middlewares\NeedsRoleMiddleware::class,
+        'needsPermission' => \Artesaos\Defender\Middlewares\NeedsPermissionMiddleware::class,
+
+        'viewShareLoggedUser' => \App\Http\Middleware\ViewShareLoggedUser::class,
     ];
 }

@@ -6,11 +6,18 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "anlutro/l4-settings": "^1.2",
+        "artesaos/defender": "^0.12.0",
+        "geo-sot/laravel-env-editor": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
+        "laracasts/flash": "^3.2",
+        "laracasts/presenter": "^0.2.5",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+        "laravel/ui": "^4.1",
         "lazzard/php-ftp-client": "^1.7",
+        "prettus/l5-repository": "^2.8",
         "spatie/laravel-short-schedule": "^1.5"
     },
     "require-dev": {

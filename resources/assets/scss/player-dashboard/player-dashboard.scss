@@ -1,0 +1,248 @@
+// Container
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
+
+// Header
+.horizontal-menu {
+    .header-navbar {
+        background: #ED1C24;
+
+        .navbar-container {
+            ul.navbar-nav {
+                li {
+                    a.dropdown-user-link {
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Form control static
+.form-control-static {
+    height: 250px;
+    overflow-y: scroll;
+}
+
+
+// Badge Status
+.badge-status {
+    .badge {
+        display: block;
+        height: 35px;
+        font-size: 16px;
+        line-height: 35px;
+        padding: 0px;
+    }
+}
+
+
+// File label
+.custom-file-label::after {
+    content: "Escolher arquivo" !important;
+}
+
+
+// Billet Result
+.billet-result {
+    h4 {
+        margin-top: 12px;
+        margin-bottom: 20px;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    p {
+        &.instructions {
+            margin-bottom: 0px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        &.barcode {
+            margin-top: 12px;
+            margin-bottom: 0;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        strong {
+            font-weight: 900;
+        }
+    }
+
+    .btn {
+        margin-top: 18px;
+        margin-bottom: 18px;
+    }
+
+    #barcode {
+        background: #e8e8e8;
+        height: 50px;
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    #copy-barcode i {
+        font-size: 14px;
+    }
+}
+@media (max-width: 1199px) {
+    .billet-result {
+        #barcode {
+            height: 80px;
+        }
+    }
+}
+@media (max-width: 559px) {
+    .billet-result {
+        .col-buttons {
+            .btn {
+                display: block;
+            }
+        }
+    }
+}
+
+
+// Pix Result
+.pix-result {
+    h4 {
+        margin-top: 12px;
+        margin-bottom: 20px;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    img {
+        display: inline-block;
+        float: left;
+        width: 200px;
+        height: 200px;
+        margin-right: 20px;
+    }
+
+    .instructions {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        float: left;
+        width: calc(100% - 220px);
+        height: 180px;
+
+        p {
+            display: block;
+            width: 100%;
+            margin-bottom: 8px;
+            font-size: 13px;            
+
+            strong {
+                font-weight: 900;
+            }
+        }
+    }
+}
+@media (max-width: 659px) {
+    .pix-result {
+        img {
+            display: block;
+            float: none;
+            width: 200px;
+            height: 200px;
+            margin: 0px auto 20px auto;
+        }
+
+        .instructions {
+            display: block;
+            float: none;
+            width: 100%;
+        }
+    }
+}
+
+
+// Checkout page
+.card-checkout {
+    .text-skip {
+        font-size: 12px;
+    }
+
+    .payment-methods .custom-control-label,
+    .shipping-methods .custom-control-label {
+        font-size: 12px;
+        line-height: 26px;
+    }
+}
+.loading-overlay {
+    opacity: 0.9 !important;
+}
+.loading-overlay-content {
+    font-size: 15px;
+}
+
+
+// Alert card
+.alert-card {
+    padding: 10px;
+    border-left: 3px solid #f5365c;
+    display: block;
+    width: 100%;
+    border-top: 1px solid #e9ecef;
+    border-right: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+
+    font-size: 13px;
+    line-height: 1.2rem;
+}
+
+
+// Alarm reminder
+.alarm-reminder {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 110px;
+}
+
+
+// Mixin Transition
+@mixin transition( $transition... ) {
+    transition: $transition;
+    -o-transition: $transition;
+    -ms-transition: $transition;
+    -moz-transition: $transition;
+    -webkit-transition: $transition;
+}
+
+
+// Order Details page
+body.page--customer-orders-view {
+    .form-group {
+        .badge {
+            line-height: 2rem;
+            display: block;
+            height: calc(2.75rem + 2px);
+            font-size: 1rem;
+            border-radius: .375rem;
+        }
+    }
+
+    .alert-certificate {
+        font-size: 16px !important;
+    }
+
+    .form-control:disabled,
+    .form-control[readonly] {
+        background-color: #fdfdfd;
+    }
+}
+
+@import "media-upload.scss";
+@import "responsive.scss";

@@ -1,0 +1,93 @@
+// Customer orders page
+@media (min-width: 992px) and (max-width: 1999px) {
+    body.page--customer-orders-index .table-orders thead th:nth-child(5),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(5) {
+        display: none;
+    }
+
+    body.page--customer-orders-index .table-orders thead th:nth-child(8),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(8) {
+        text-align: center;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    body.page--customer-orders-index .table-orders thead th:nth-child(1),
+    body.page--customer-orders-index .table-orders thead th:nth-child(4),
+    body.page--customer-orders-index .table-orders thead th:nth-child(5),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(1),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(4),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(5) {
+        display: none;
+    }
+
+    body.page--customer-orders-index .table-orders tbody tr td .btn {
+        font-size: .65rem;
+    }
+    body.page--customer-orders-index .table-orders tbody tr td .btn i {
+        display: none;
+    }
+
+    body.page--customer-orders-index .table-orders thead th:nth-child(8),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(8) {
+        width: 130px;
+        text-align: center;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+}
+@media (min-width: 540px) and (max-width: 768px) {
+    body.page--customer-orders-index .table-orders thead th:nth-child(1),
+    body.page--customer-orders-index .table-orders thead th:nth-child(2),
+    body.page--customer-orders-index .table-orders thead th:nth-child(4),
+    body.page--customer-orders-index .table-orders thead th:nth-child(5),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(1),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(2),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(4),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(5) {
+        display: none;
+    }
+
+    body.page--customer-orders-index .table-orders tbody tr td .btn {
+        font-size: .65rem;
+    }
+    body.page--customer-orders-index .table-orders tbody tr td .btn i {
+        display: none;
+    }
+
+    body.page--customer-orders-index .table-orders thead th:nth-child(8),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(8) {
+        width: 130px;
+        text-align: center;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+}
+@media (max-width: 539px) {
+    body.page--customer-orders-index .table-orders thead th:nth-child(1),
+    body.page--customer-orders-index .table-orders thead th:nth-child(2),
+    body.page--customer-orders-index .table-orders thead th:nth-child(4),
+    body.page--customer-orders-index .table-orders thead th:nth-child(5),
+    body.page--customer-orders-index .table-orders thead th:nth-child(7),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(1),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(2),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(4),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(5),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(7) {
+        display: none;
+    }
+
+    body.page--customer-orders-index .table-orders tbody tr td .btn {
+        font-size: .65rem;
+    }
+    body.page--customer-orders-index .table-orders tbody tr td .btn i {
+        display: none;
+    }
+
+    body.page--customer-orders-index .table-orders thead th:nth-child(8),
+    body.page--customer-orders-index .table-orders tbody tr td:nth-child(8) {
+        width: 130px;
+        text-align: center;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+}
