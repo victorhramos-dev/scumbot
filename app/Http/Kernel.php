@@ -58,6 +58,8 @@ class Kernel extends HttpKernel
         
         'player'         => \App\Http\Middleware\Player\RedirectWhenIsGuest::class,
         'player.logged'  => \App\Http\Middleware\Player\RedirectWhenIsLogged::class,
+
+        'drone.hwid' => \App\Http\Middleware\Drone\NeedsHardwareIdMiddleware::class,
         
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'guest'  => \App\Http\Middleware\RedirectIfAuthenticated::class,
