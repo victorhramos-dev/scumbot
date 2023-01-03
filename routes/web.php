@@ -112,6 +112,42 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
                     ->name('destroy')
                     ->middleware('needsPermission:player.destroy');
             });
+
+            // Drones
+            $router->group([
+                'prefix' => 'drones',
+                'as'     => 'drones.'
+            ], function() use($router) {
+                $router
+                    ->get('', 'Business\DronesController@index')
+                    ->name('index')
+                    ->middleware('needsPermission:drone.index');
+
+                $router
+                    ->get('create', 'Business\DronesController@create')
+                    ->name('create')
+                    ->middleware('needsPermission:drone.create');
+
+                $router
+                    ->get('{drone}/edit', 'Business\DronesController@edit')
+                    ->name('edit')
+                    ->middleware('needsPermission:drone.edit');
+
+                $router
+                    ->post('store', 'Business\DronesController@store')
+                    ->name('store')
+                    ->middleware('needsPermission:drone.create');
+
+                $router
+                    ->put('{drone}/update', 'Business\DronesController@update')
+                    ->name('update')
+                    ->middleware('needsPermission:drone.edit');
+
+                $router
+                    ->delete('{drone}/destroy', 'Business\DronesController@destroy')
+                    ->name('destroy')
+                    ->middleware('needsPermission:drone.destroy');
+            });
         });
 
         // Administrators

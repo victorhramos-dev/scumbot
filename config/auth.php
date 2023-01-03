@@ -27,6 +27,10 @@ return [
     */
 
     'guards' => [
+
+        /**
+         * Default (WEB + API)
+         */
         'web' => [
             'driver'   => 'session',
             'provider' => 'administrators',
@@ -35,13 +39,26 @@ return [
             'driver'   => 'token',
             'provider' => 'administrators',
         ],
+
+        /**
+         * Admin (WEB)
+         */
         'administrator' => [
             'driver'   => 'session',
             'provider' => 'administrators',
         ],
-        'player' => [
+
+        /**
+         * Drone (WEB + API)
+         */
+        'drone' => [
             'driver'   => 'session',
-            'provider' => 'players',
+            'provider' => 'drones',
+        ],
+        'api_drone' => [
+            'driver'   => 'token',
+            'provider' => 'api_drones',
+            'hash'     => false,
         ],
     ],
 
@@ -52,13 +69,25 @@ return [
     */
 
     'providers' => [
+
+        /**
+         * Admin (WEB)
+         */
         'administrators' => [
             'driver' => 'eloquent',
             'model'  => App\Models\System\Management\Administrator::class,
         ],
-        'players' => [
+
+        /**
+         * Drone (WEB + API)
+         */
+        'drones' => [
             'driver' => 'eloquent',
-            'model'  => App\Models\Business\Players\Player::class,
+            'model'  => App\Models\Drone::class,
+        ],
+        'api_drones' => [
+            'driver' => 'eloquent',
+            'model'  => App\Models\Drone::class,
         ],
     ],
 

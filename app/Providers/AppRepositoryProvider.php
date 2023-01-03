@@ -7,8 +7,10 @@ use App\Criteria\LoggedAuth\MorphedCriteria;
 use App\Criteria\LoggedAuth\RelatedCriteria;
 
 use App\Repositories\Contracts\AdministratorRepository as AdministratorRepositoryInterface;
+use App\Repositories\Contracts\DroneRepository as DroneRepositoryInterface;
 use App\Repositories\Contracts\PlayerRepository as PlayerRepositoryInterface;
 
+use App\Repositories\Business\EloquentDroneRepository;
 use App\Repositories\Business\EloquentPlayerRepository;
 
 use App\Repositories\System\EloquentAdministratorRepository;
@@ -46,6 +48,7 @@ class AppRepositoryProvider extends ServiceProvider
      */
     private function registerGlobalBindings()
     {
+        $this->app->bind(DroneRepositoryInterface::class, EloquentDroneRepository::class);
         $this->app->bind(PlayerRepositoryInterface::class, EloquentPlayerRepository::class);
 
         $this->app->bind(AdministratorRepositoryInterface::class, EloquentAdministratorRepository::class);

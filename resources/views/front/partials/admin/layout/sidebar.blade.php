@@ -34,6 +34,14 @@
                 </li>
             @endshield
 
+            @shield('drone.index')
+                <li class="nav-item">
+                    <a class="d-flex align-items-center" href="{{ route('admin.drones.index') }}">
+                        <i class="fas fa-robot"></i> <span class="menu-title text-truncate">@lang('dictionary.drones')</span>
+                    </a>
+                </li>
+            @endshield
+
             <li class="navigation-header">
                 <span>Sistema</span><i data-feather="more-horizontal"></i>
             </li>

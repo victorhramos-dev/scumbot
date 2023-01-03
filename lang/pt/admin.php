@@ -12,6 +12,10 @@ return [
         'create'   => 'Adicionar Player',
         'edit'     => 'Editar Player',
     ],
+    'drones' => [
+        'create'   => 'Adicionar Drone',
+        'edit'     => 'Editar Drone',
+    ],
     'settings' => [
         'index' => 'Configurações Gerais',
     ],
