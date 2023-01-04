@@ -27,9 +27,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 */
 Route::group(['prefix' => 'drone', 'as' => 'drone.', 'namespace' => 'App\Http\Controllers\Api\Drone'], function() use($router) {
 
-    // Authentication Routes...
-    $router->post('login', 'Auth\LoginController@login')->name('login');
-
     // Auth middlewares
     $middleware = [
         'drone.hwid',
